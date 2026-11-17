@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>আন্তর্জাতিক দুঃস্থ ও প্রতিবন্ধী সোসাইটি  INTERNATIONAL DESTITUTE & DISABILITIES SOCIETY</title> 
+                                   
+    <!-- আধুনিক ও প্রিমিয়াম ফন্ট -->
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla:ital@0;1&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0284c7;
+            --secondary-color: #059669;
+            --dark-color: #0f172a;
+            --light-bg: #f1f5f9;
+            --text-color: #1e293b;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Tiro Bangla', 'Montserrat', serif;
+            color: var(--text-color);
+            line-height: 1.8;
+            background-color: #ffffff;
+            scroll-behavior: smooth;
+        }
+        /* Header & Navbar */
+        header {
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo h1 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1.3;
+        }
+        .logo span {
+            font-size: 0.78rem;
+            color: var(--secondary-color);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            display: block;
+            letter-spacing: 0.8px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        .donate-btn-nav {
+            background: var(--secondary-color);
+            color: #fff !important;
+            padding: 8px 18px;
+            border-radius: 6px;
+        }
+        .donate-btn-nav:hover {
+            background: #047857;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.82)), url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+            color: #ffffff;
+            text-align: center;
+            padding: 130px 20px;
+        }
+        .hero h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .hero h3 {
+            font-size: 1.3rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #38bdf8;
+            margin-bottom: 25px;
+            letter-spacing: 1.2px;
+        }
+        .hero p {
+            max-width: 800px;
+            margin: 0 auto 35px;
+            font-size: 1.25rem;
+            color: #cbd5e1;
+        }
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+        .btn-primary {
+            background: var(--primary-color);
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: #0268a9;
+        }
+        .btn-outline {
+            border: 2px solid #fff;
+            color: #fff;
+        }
+        .btn-outline:hover {
+            background: #fff;
+            color: var(--dark-color);
+        }
+
+        /* Section General */
+        section {
+            padding: 85px 20px;
+        }
+        .container {
+            max-width: 1150px;
+            margin: auto;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+        .section-title h2 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 12px;
+        }
+        .section-title p {
+            color: #64748b;
+            font-size: 1.2rem;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            align-items: center;
+        }
+        .about-text h3 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 18px;
+        }
+        .about-text p {
+            margin-bottom: 16px;
+            font-size: 1.15rem;
+        }
+        .about-img img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+        }
+
+        /* Programs / Services */
+        .programs {
+            background: var(--light-bg);
+        }
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+            border-top: 5px solid var(--primary-color);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+        }
+        .card img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+        }
+        .card-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card h3 {
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 12px;
+        }
+        .card p {
+            font-size: 1.1rem;
+            color: #475569;
+        }
+
+        /* Rights Section */
+        .rights-box {
+            background: #ffffff;
+            padding: 45px;
+            border-radius: 14px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+            border-left: 6px solid var(--secondary-color);
+        }
+        .rights-box p {
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+        }
+        .rights-img-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .rights-img-grid img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        /* Committee Section */
+        .committee-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+        }
+        .member-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+            border: 1px solid #e2e8f0;
+            padding-bottom: 25px;
+        }
+        .member-card img {
+            width: 100%;
+            height: 270px;
+            object-fit: cover;
+            margin-bottom: 18px;
+        }
+        .member-card h4 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 4px;
+        }
+        .member-card .eng-name {
+            font-size: 0.95rem;
+            color: #64748b;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+        .member-card p {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        /* Gallery Section */
+        .gallery-bg {
+            background: var(--light-bg);
+        }
+        .upload-box {
+            text-align: center;
+            background: #ffffff;
+            border: 2px dashed var(--primary-color);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 35px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+        }
+        .upload-btn {
+            background: var(--secondary-color);
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+        .upload-btn:hover {
+            background: #047857;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            height: 270px;
+            background: #fff;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.06);
+        }
+
+        /* Membership Form Section */
+        .membership-section {
+            background: linear-gradient(rgba(2, 132, 199, 0.92), rgba(2, 132, 199, 0.92)), url('https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            color: #ffffff;
+        }
+        .membership-form-box {
+            background: #ffffff;
+            color: var(--text-color);
+            max-width: 750px;
+            margin: auto;
+            padding: 45px;
+            border-radius: 14px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .membership-form-box label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--dark-color);
+        }
+        .membership-form-box input, 
+        .membership-form-box select, 
+        .membership-form-box textarea {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 18px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1.1rem;
+        }
+        .membership-form-box button {
+            background: var(--secondary-color);
+            color: #fff;
+            border: none;
+            width: 100%;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .membership-form-box button:hover {
+            background: #047857;
+        }
+
+        /* Donation Box */
+        .donate-section {
+            background: #0f172a;
+            color: #ffffff;
+            text-align: center;
+        }
+        .donate-section h2 {
+            font-size: 2.7rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        .donate-section p {
+            font-size: 1.2rem;
+        }
+        .donate-details {
+            background: rgba(255,255,255,0.06);
+            max-width: 700px;
+            margin: 30px auto 0;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: left;
+        }
+        .donate-details h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+        .donate-details p {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        .contact-info h3 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 18px;
+        }
+        .contact-info p {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        .contact-section-box input, .contact-section-box textarea {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 18px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1.1rem;
+        }
+        .contact-section-box button {
+            background: var(--secondary-color);
+            color: #fff;
+            border: none;
+            padding: 13px 28px;
+            border-radius: 8px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            background: #090d16;
+            color: #cbd5e1;
+            text-align: center;
+            padding: 35px 20px;
+        }
+        footer p {
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .hero h2 {
+                font-size: 2rem;
+            }
+            .section-title h2 {
+                font-size: 2.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- নেভিগেশন বার -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <h1>আন্তর্জাতিক দুঃস্থ ও প্রতিবন্ধী সোসাইটি</h1>
+                <span>INTERNATIONAL DESTITUTE & DISABILITIES SOCIETY</span>
+                      www.idds.org 
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">হোম</a></li>
+                    <li><a href="#about">আমাদের সম্পর্কে</a></li>
+                    <li><a href="#programs">কার্যক্রম</a></li>
+                    <li><a href="#rights">অধিকার ও কোটা</a></li>
+                    <li><a href="#committee">কমিটি</a></li>
+                    <li><a href="#gallery">গ্যালারি</a></li>
+                    <li><a href="#membership">সদস্য হন</a></li>
+                    <li><a href="#contact">যোগাযোগ</a></li>
+                    <li><a href="#donate" class="donate-btn-nav">সহায়তা</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- প্রধান ব্যানার (Hero Section) -->
+    <section class="hero" id="home">
+        <h2>মানবতার সেবায়, অসহায় দুঃস্থ, এতিম ও প্রতিবন্ধী মানুষের পাশে</h2>
+        <h2>IN THE SERVICE OF HUMANITY STANDING BY THE SIDE OF THE HELPLESS, THE DESTITUTE, ORPHANS, AND PEOPLE WITH DISABILITIES.</h2>
+        <h3>আর্ন্তজাতিক দুঃস্থ ও প্রতিবন্ধী সোসাইটি</h3>
+         <h3>INTERNATIONAL DESTITUTE & DISABILITIES SOCIETY</h3>
+
+        <p>সমাজের অবহেলিত, দুঃস্থ ও বিশেষ চাহিদাসম্পন্ন মানুষদের অধিকার রক্ষা, পুনর্বাসন এবং স্বাবলম্বী করে গড়ে তোলাই আমাদের মূল লক্ষ্য।</p>
+        <p>OUR PRIMARY OBJECTIVE IS TO PROTECT THE RIGHTS OF THE NEGLECTED, THE DISTRESSED, AND THOSE WITH SPECIAL NEEDS, WHILE FACILITATING THEIR REHABILITATION AND                     
+EMPOWERING THEM TO BECOME SELF-RELIANT.。</p>
+
+        <div class="btn-group">
+            <a href="#membership" class="btn btn-primary">সদস্য ফরম পূরণ করুন</a>
+            <a href="#donate" class="btn btn-outline">অনুদান দিন (Donate)</a>
+        </div>
+    </section>
+
+    <!-- আমাদের সম্পর্কে (About Section) -->
+www.idds.org 
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>আমাদের সম্পর্কে (About Us)</h2>
+                <p>মানবিক মূল্যবোধ ও সামাজিক দায়বদ্ধতা থেকে আমাদের পথচলা</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>আন্তর্জাতিক দুঃস্থ ও প্রতিবন্ধী সোসাইটি</h3>
+                    <p><strong>আন্তর্জাতিক দুঃস্থ ও প্রতিবন্ধী সোসাইটি</strong> একটি অলাভজনক, অরাজনৈতিক ও সেবামূলক সামাজিক সংগঠন। আমরা দেশ ও আন্তর্জাতিক পর্যায়ে সুবিধা বঞ্চিত,দুঃস্থ এবং শারীরিক ও মানসিকভাবে প্রতিবন্ধী ব্যক্তিদের জীবনমান উন্নয়নে কাজ করে যাচ্ছি।</p>
+                    <p>আমাদের লক্ষ্য হলো প্রতিটি প্রতিবন্ধী ও অসহায় মানুষকে সমাজের মূলধারায় ফিরিয়ে আনা, তাদের সুচিকিৎসা, শিক্ষা ও কর্মসংস্থানের ব্যবস্থা নিশ্চিত করা।</p>
+
+                    <h3>INTERNATIONAL DESTITUTE & DISABILITIES SOCIETY</h3>
+                    <p><strong>INTERNATIONAL DESTITUTE & DISABILITIES SOCIETY</strong> We are a non-profit, non-political, and service-oriented social organization. We   work both domestically and internationally to improve the quality of life for the underprivileged, the destitute, and individuals with physical or mental disabilities.</p>
+                    <p>Our mission is to reintegrate people with disabilities and those in need into the mainstream of society, while ensuring access to proper medical care, education, and employment opportunities.</p>
+                </div>
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=800&q=80" alt="সমাজসেবা কার্যক্রম">
+                    <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=800&q=80" alt="Social service activities">
+                </div>
+            </div>
+        </div>
+    </section>
+
+ www.idds.org <!-- আমাদের কার্যক্রমসমূহ (Programs) -->
+    <section class="programs" id="programs">
+        <div class="container">
+            <div class="section-title">
+                <h2>আমাদের মূল কার্যক্রমসমূহ</h2>
+                <h2>(Our core activities)</h2>
+                <p>দুঃস্থ ও প্রতিবন্ধী ব্যক্তিদের কল্যাণে আমাদের চলমান প্রকল্পসমূহ</p>
+                <p>(Our ongoing projects for the welfare of the needy and persons with disabilities)</p>
+
+            </div>
+            <div class="cards-grid">
+                <!-- ১. চিকিৎসা ও সহায়ক উপকরণ -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=600&q=80" alt="চিকিৎসা সেবা ও সহায়ক উপকরণ">
+                    <div class="card-content">
+                        <div>
+                            <h3>১. চিকিৎসা ও সহায়ক উপকরণ বিতরণ</h3>
+                            <p>অসহায় ও প্রতিবন্ধী ব্যক্তিদের বিনামূল্যে চিকিৎসা সেবা, হুইলচেয়ার, ক্রাচ, শ্রবণযন্ত্র ও প্রয়োজনীয় ওষুধ সরবরাহ করা হয়।</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- ২. শিক্ষা ও বৃত্তি প্রদান -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=600&q=80" alt="শিক্ষা ও বৃত্তি প্রদান">
+                    <div class="card-content">
+                        <div>
+                            <h3>২. শিক্ষা ও বৃত্তি প্রদান</h3>
+                            <p>দরিদ্র ও বিশেষ চাহিদাসম্পন্ন শিশুদের শিক্ষার আলোয় আলোকিত করতে শিক্ষা উপকরণ ও নিয়মিত শিক্ষাবৃত্তি প্রদান করা হয়।</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- ৩. কারিগরি প্রশিক্ষণ ও পুনর্বাসন -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80" alt="কারিগরি প্রশিক্ষণ ও পুনর্বাসন">
+                    <div class="card-content">
+                        <div>
+                            <h3>৩. কারিগরি প্রশিক্ষণ ও পুনর্বাসন</h3>
+                            <p>কর্মক্ষম প্রতিবন্ধী ও দুঃস্থ নারী-পুরুষদের হাতের কাজ, সেলাই ও কম্পিউটার প্রশিক্ষণের মাধ্যমে স্বাবলম্বী করে তোলা হয়।</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- ৪. জরুরি ত্রাণ ও খাদ্য সহায়তা -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1593113643793-7b3b44b8f522?auto=format&fit=crop&w=600&q=80" alt="জরুরি ত্রাণ ও খাদ্য সহায়তা">
+                    <div class="card-content">
+                        <div>
+                            <h3>৪. জরুরি ত্রাণ ও খাদ্য সহায়তা</h3>
+                            <p>প্রাকৃতিক দুর্যোগ ও সংকটকালীন সময়ে অসহায় পরিবারগুলোর মাঝে খাদ্যসামগ্রী, শীতবস্ত্র ও আর্থিক সহায়তা পৌঁছে দেওয়া হয়।</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- প্রতিবন্ধী ব্যক্তিদের অধিকার ও সমান সুযোগ -->
+    <section id="rights">
+        <div class="container">
+            <div class="section-title">
+www.idds.org  <h2>দুঃস্থ ও প্রতিবন্ধী ব্যক্তিদের অধিকার ও সমান সুযোগ</h2>
+              <h2>(Rights and equal opportunities for disadvantaged and disabled individuals)</h2>
+               <p>মর্যাদা, সমঅধিকার, অন্তর্ভুক্তি ও বৈষম্যহীন সমাজ প্রতিষ্ঠায় আমাদের অঙ্গীকার</p>
+               <p>(Our commitment to establishing a society based on dignity, equal rights, inclusion, and non-discrimination.)</p>
+            </div>
+            <div class="rights-box">
+                <p>
+                    সরকারী আধা সরকারী, স্বায়ত্তশাসিত, বে-সরকারী প্রতিষ্ঠানের দুঃস্থ প্রতিবন্দিদের অধিকার কোঠা রহিহাছে, যা আন্তর্জাতিক ভাবে স্বীকৃত এবং জাতিসংঘ অনুমোদিত।
+                </p>
+                <p style="margin-top:14px;">
+                    প্রতিবন্ধী ব্যক্তিদের অধিকার জাতিসংঘের প্রতিবন্ধী ব্যক্তিদের অধিকারবিষয়ক সনদ (United Nations Convention on the Rights of Persons with Disabilities — UNCRPD)-এ আন্তর্জাতিকভাবে স্বীকৃত। নিয়োগে কোটা বা বিশেষ সুবিধা সংশ্লিষ্ট দেশের প্রচলিত আইন, বিধিমালা ও প্রতিষ্ঠানের নীতিমালা অনুযায়ী প্রযোজ্য হবে।
+                </p>
+                <p style="margin-top:14px;">
+                    আমাদের লক্ষ্য হলো দুঃস্থ ও প্রতিবন্ধী ব্যক্তিদের মর্যাদা রক্ষা, বৈষম্য দূরীকরণ, অধিকার সম্পর্কে সচেতনতা বৃদ্ধি এবং সমাজের সব ক্ষেত্রে তাদের অংশগ্রহণের সুযোগ সম্প্রসারণে কাজ করা।
+
+                    There are provisions for quota-based rights for disadvantaged persons with disabilities in government, semi-government, autonomous, and private-sector institutions—a practice that is internationally recognized and endorsed by the United Nations.
+                </p>
+                <p style="margin-top:14px;">
+                    The rights of persons with disabilities are internationally recognized under the United Nations Convention on the Rights of Persons with Disabilities (UNCRPD). Quotas or special provisions in recruitment shall be applied in accordance with the prevailing laws, regulations, and institutional policies of the respective country.
+                </p>
+                <p style="margin-top:14px;">
+                    Our objective is to work towards upholding the dignity of disadvantaged persons with disabilities, eliminating discrimination, raising awareness about their rights, and expanding opportunities for their participation in all spheres of society.
+
+                </p>
+                <div class="rights-img-grid">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80" alt="সচেতনতা ও অধিকার সভা">
+                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80" alt="অন্তর্ভুক্তিমূলক সমাজ গড়ার প্রত্যয়">
+                </div>
+            </div>
+        </div>
+    </section>
+
+www.idds.org <!-- কার্যনির্বাহী কমিটি (Committee Section) -->
+    <section id="committee">
+        <div class="container">
+            <div class="section-title">
+                <h2>কার্যনির্বাহী কমিটি</h2>
+                <h2>EXCEUTIVE COMMITTEE</h2>
+                <p>যাদের দক্ষ নেতৃত্বে আমাদের এই মানবিক কার্যক্রম পরিচালিত হচ্ছে</p>
+                <p>(Under whose capable leadership our humanitarian activities are being conducted)</p>
+
+            </div>
+            <div class="committee-grid">
+                <!-- সভাপতি -->
+                <div class="member-card">
+                    <img src="president.jpg" onerror="this.src='president.jpg.jpg'" alt="মোঃ জাহাঙ্গীর মণ্ডল">
+                    <h4>মোঃ জাহাঙ্গীর মণ্ডল</h4>
+                    <div class="eng-name">Md. Jahangir Mondol</div>
+                    <p>সভাপতি (President)</p>
+                </div>
+                <!-- সহ সভাপতি -->
+                <div class="member-card">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80" alt="মোঃ সিদ্দিক শেখ">
+                    <h4>মোঃ সিদ্দিক শেখ</h4>
+                    <div class="eng-name">Md. Siddik Shekh</div>
+                    <p>সহ সভাপতি (Vice President)</p>
+                </div>
+                <!-- সাধারণ সম্পাদক -->
+                <div class="member-card">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80" alt="মোঃ মোনছের মোল্লা">
+                    <h4>মোঃ মোনছের মোল্লা</h4>
+                    <div class="eng-name">Md. Monser Mollah</div>
+                    <p>সাধারণ সম্পাদক (General Secretary)</p>
+                </div>
+                <!-- কোষাধ্যক্ষ -->
+                <div class="member-card">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" alt="মোঃ শাহিন সরদার">
+                    <h4>মোঃ শাহিন সরদার</h4>
+                    <div class="eng-name">Md. Shahin Sordar</div>
+                    <p>কোষাধ্যক্ষ (Treasurer)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ছবির গ্যালারি (Gallery Section) -->
+    <section class="gallery-bg" id="gallery">
+        <div class="container">
+            <div class="section-title">
+   www.idds.org  <h2>কার্যক্রমের ছবির গ্যালারি</h2>
+                 <h2>(Photo gallery of activities)</h2>
+
+                <p>আমাদের বিভিন্ন সামাজিক ও মানবিক কাজের কিছু মুহূর্ত ও পত্রিকার কাটিং</p>
+            </div>
+                <p>(Moments from our various social and humanitarian activities, along with newspaper clippings.)</p>
+            </div>
+                
+            <div class="gallery-grid" id="galleryGrid">
+                <div class="gallery-item">
+                    <img src="1.jpeg" onerror="this.src='1.jpeg.jpeg'" alt="শীতবস্ত্র বিতরণ কার্যক্রম ছবি ১">
+                </div>
+                <div class="gallery-item">
+                    <img src="2.jpeg" onerror="this.src='2.jpeg.jpeg'" alt="শীতবস্ত্র বিতরণ কার্যক্রম ছবি ২">
+                </div>
+                <div class="gallery-item">
+                    <img src="4.jpeg" onerror="this.src='4.jpeg.jpeg'" alt="শীতবস্ত্র বিতরণ কার্যক্রম ছবি ৩">
+                </div>
+                <div class="gallery-item">
+                    <img src="5.jpeg" onerror="this.src='5.jpeg.jpeg'" alt="শীতবস্ত্র বিতরণ কার্যক্রম ছবি ৪">
+                </div>
+                <div class="gallery-item">
+                    <img src="6.jpeg" onerror="this.src='6.jpeg.jpeg'" alt="শীতবস্ত্র বিতরণ কার্যক্রম ছবি ৫">
+                </div>
+                <div class="gallery-item">
+                    <img src="7.jpeg" onerror="this.src='7.jpeg.jpeg'" alt="কম্বল ও ত্রাণ বিতরণ ছবি ৬">
+                </div>
+                <div class="gallery-item">
+                    <img src="8.jpeg" onerror="this.src='8.jpeg.jpeg'" alt="কম্বল বিতরণ কার্যক্রম ছবি ৭">
+                </div>
+                <div class="gallery-item">
+                    <img src="9.jpeg" onerror="this.src='9.jpeg.jpeg'" alt="খাদ্য সামগ্রী বিতরণ ছবি ৮">
+                </div>
+                <div class="gallery-item">
+                    <img src="10.jpeg" onerror="this.src='10.jpeg.jpeg'" alt="খাদ্য সামগ্রী বিতরণ ছবি ৯">
+                </div>
+                <div class="gallery-item">
+                    <img src="12.jpeg" onerror="this.src='12.jpeg.jpeg'" alt="ত্রাণ বিতরণ ও অতিথিবৃন্দ ছবি ১০">
+                </div>
+                
+                <!-- ৬টি পত্রিকার কাটিং স্লট -->
+                <div class="gallery-item newspaper-item"><img src="" alt="পত্রিকা ১"></div>
+                <div class="gallery-item newspaper-item"><img src="" alt="পত্রিকা ২"></div>
+                <div class="gallery-item newspaper-item"><img src="" alt="পত্রিকা ৩"></div>
+                <div class="gallery-item newspaper-item"><img src="" alt="পত্রিকা ৪"></div>
+                <div class="gallery-item newspaper-item"><img src="" alt="পত্রিকা ৫"></div>
+                <div class="gallery-item newspaper-item"><img src="" alt="পত্রিকা ৬"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- সদস্য হওয়ার অনলাইন ফরম (Membership Form Section) -->
+    <section class="membership-section" id="membership">
+        <div class="container">
+            <div class="section-title">
+
+     www.idds.org <h2 style="color: #fff;">আমাদের সাথে যুক্ত হোন</h2>
+                  <h2 style="color: #fff;">(Join us)</h2>
+
+                <p style="color: #e2e8f0;">সংগঠনের সদস্য হতে নিচের ফরমটি পূরণ করুন</p>
+            </div>
+                <p style="color: #e2e8f0;">(Please fill out the form below to become a member of the organization.)</p>
+            </div>
+
+            <div class="membership-form-box">
+                <form onsubmit="alert('অভিনন্দন! আপনার সদস্য হওয়ার আবেদনটি সফলভাবে জমা হয়েছে। আমরা শীঘ্রই আপনার সাথে যোগাযোগ করব।'); return false;">
+                    <div class="form-row">
+                        <div>
+                            <label>পূর্ণ নাম (Full name) *</label>
+                            <input type="text" placeholder="আপনার নাম লিখুন" ("Enter your name" required>
+                        </div>
+                        <div>
+                            <label>মোবাইল নম্বর (Mobile number) *</label>
+                            <input type="tel" placeholder="০১৭xxxxxxxx" "017xxxxxxxx" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div>
+                            <label>ইমেইল ঠিকানা (Email address)</label>
+                            <input type="email" placeholder="example@email.com">
+                        </div>
+                        <div>
+                            <label>পেশা(Profession)</label>
+                            <input type="text" placeholder="আপনার পেশা"(Your profession)>
+                        </div>
+                    </div>
+                    <label>বর্তমান ঠিকানা *(Current address)</label>
+                    <textarea rows="2" placeholder="আপনার বাসা, উপজেলা, জেলা..."(Your home, upazila, district) required></textarea>
+                    
+                    <label>সদস্যতার ধরন (Membership Type)</label>
+                    <select>
+                        <option>সাধারণ সদস্য(General Member)</option>
+                        <option>আজীবন সদস্য(Life Member)</option>
+                        <option>স্বেচ্ছাসেবী(Volunteer) (Volunteer)</option>
+                    </select>
+
+                    <button type="submit">আবেদন জমা দিন(Submit application)</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- অনুদান বা সহায়তা সেকশন (Donation) -->
+    <section class="donate-section" id="donate">
+        <div class="container">
+www.idds.org <h2>আপনার সামান্য সহযোগিতা বদলে দিতে পারে একটি জীবন</h2>
+            <h2>Your small contribution can change a life.</h2>
+            <p>দুঃস্থ ও প্রতিবন্ধী মানুষদের কল্যাণে আপনার যাকাত,সাদাকাহ বা অনুদান পাঠাতে নিচের মাধ্যমগুলো ব্যবহার করুন:</p>
+            <p>Please use the methods below to send your Zakat, Sadaqah, or donations for the welfare of the needy and individuals with disabilities.:</p>
+            <div class="donate-details">
+                <h3 style="margin-bottom:15px;">অনুদান পাঠানোর মাধ্যম</h3>
+                <h3 style="margin-bottom:15px;">Methods for sending donations:</h3>
+                <p><strong>সংস্থার একাউন্ট নাম:</strong> আন্তর্জাতিক দুঃস্থ ও প্রতিবন্ধী সোসাইটি</p>
+                <p><strong>Organization Account Name:</strong> INTERNATIONAL DESTITUTE & DISABILITIES SOCIETY</p>
+                <p><strong>বিকাশ নম্বর:</strong> ০১৩৪৩৩৮৬৫১৪</p>
+                <p><strong>bKash Number:</strong> 01343386514</p>
+                <p><strong>ব্যাংকের নাম:</strong> সোনালী ব্যাংক পি এল সি লিমিটেড (Sonali Bank PLC)</p>
+                <p><strong>ব্যাংক হিসাব নাম্বার:</strong> ৪২১১৩৫০۱۰৩০৪৮৭</p>
+                <p><strong>Bank Account Number:</strong> 4213501030487</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- যোগাযোগ সেকশন (Contact) -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+  www.idds.org <h2>যোগাযোগ করুন (Contact Us)</h2>
+                <p>যেকোনো তথ্য বা সহায়তার জন্য আমাদের সাথে যোগাযোগ করুন</p>
+            </div>
+                <p>(Please contact us for any information or assistance.)</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>আন্তর্জাতিক প্রধান কার্যালয়</h3>
+                    <p><strong>ঠিকানা:</strong> ৭৬০, ইউনাইটেড ন্যাশন্স প্লাজা, ম্যানহাটন, নিউ ইয়র্ক সিটি, নিউ ইয়র্ক ১০০১৭</p>
+                    <p><strong>ফোন নম্বর:</strong>+৮৮০ ১৩৪৩৩৮৬৫১৪ (মোঃ জাহাঙ্গীর মন্ডল, সভাপতি, (আই,ডি,ডি,এস) সিরাজগঞ্জ জেলা,ঢাকা, বাংলাদেশ। )</p>
+                    <p><strong>ইমেইল:</strong> mdrezaulhuqak2025@gmail.com</p>
+                    <p><strong>ওয়েবসাইট:</strong> www.idds.org</p>
+
+                    <h3>International Headquarters</h3>
+                    <p><strong>Address:</strong> 760, United Nations Plaza, Manhattan, New York City, New York, 10017</p>
+                    <p><strong>Phone Number:</strong>+880 1343386514 (Md. Jahangir Mondal, President, (IDDS) Sirajganj District, Dhaka, Bangladesh.)</p>
+                    <p><strong>Email:</strong> mdrezaulhuqak2025@gmail.com</p>
+                    <p><strong>WebSite:</strong> www.idds.org</p>
+
+                </div>
+                <div class="contact-section-box">
+                    <form onsubmit="alert('ধন্যবাদ! আপনার বার্তাটি সফলভাবে পাঠানো হয়েছে।'); return false;">
+                        <input type="text" placeholder="আপনার নাম" required>
+                        <input type="email" placeholder="আপনার ইমেইল বা ফোন নম্বর" required>
+                        <textarea rows="4" placeholder="আপনার বার্তা লিখুন..." required></textarea>
+                        <button type="submit">বার্তা পাঠান</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ফুটার -->
+    <footer>
+        <p>&copy; ২০২৬ আন্তর্জাতিক দুঃস্থ ও প্রতিবন্ধী সোসাইটি (INTERNATIONAL DESTITUTE & DISABILITIES SOCIETY) | সর্বস্বত্ব সংরক্ষিত।</p>
+    </footer>
+
+    <!-- ছবি অটো-কম্প্রেশন ও পার্মানেন্ট সেভ করার জন্য জাভাস্ক্রিপ্ট -->
+    <script>
+        // পেজ লোড হলে আগে থেকে সেভ করা ছবিগুলো গ্যালারিতে স্বয়ংক্রিয়ভাবে বসিয়ে দেওয়া
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedImages = JSON.parse(localStorage.getItem('savedNewspapers')) || [];
+            const newspaperImgs = document.querySelectorAll('.newspaper-item img');
+            savedImages.forEach((imgSrc, index) => {
+                if (newspaperImgs[index] && imgSrc) {
+                    newspaperImgs[index].src = imgSrc;
+                }
+            });
+        });
+
+        // ছবি সিলেক্ট করলে সাইজ ছোট (Compress) করে localStorage-এ স্থায়ীভাবে সেভ করা
+        function loadNewspapers(event) {
+            const files = event.target.files;
+            if (files.length > 0) {
+                const newspaperImgs = document.querySelectorAll('.newspaper-item img');
+                let base64Images = JSON.parse(localStorage.getItem('savedNewspapers')) || [];
+                let loadedCount = 0;
+                const totalFiles = Math.min(files.length, newspaperImgs.length);
+
+                for (let i = 0; i < totalFiles; i++) {
+                    const reader = new FileReader();
+                    const currentIndex = i;
+                    reader.onload = function(e) {
+                        const img = new Image();
+                        img.onload = function() {
+                            const canvas = document.createElement('canvas');
+                            const ctx = canvas.getContext('2d');
+                            
+                            // ছবির সাইজ সর্বোচ্চ ৮০০ পিক্সেল করা (মেমোরি বাঁচাতে)
+                            const MAX_SIZE = 800;
+                            let width = img.width;
+                            let height = img.height;
+
+                            if (width > height) {
+                                if (width > MAX_SIZE) {
+                                    height *= MAX_SIZE / width;
+                                    width = MAX_SIZE;
+                                }
+                            } else {
+                                if (height > MAX_SIZE) {
+                                    width *= MAX_SIZE / height;
+                                    height = MAX_SIZE;
+                                }
+                            }
+
+                            canvas.width = width;
+                            canvas.height = height;
+                            ctx.drawImage(img, 0, 0, width, height);
+                            
+                            // কম্প্রেস করে কোয়ালিটি ০.৭ করা
+                            const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.7);
+                            
+                            newspaperImgs[currentIndex].src = compressedDataUrl;
+                            base64Images[currentIndex] = compressedDataUrl;
+                            loadedCount++;
+
+                            if (loadedCount === totalFiles) {
+                                try {
+                                    localStorage.setItem('savedNewspapers', JSON.stringify(base64Images));
+                                    alert('সফলভাবে পত্রিকার ছবিগুলো স্থায়ীভাবে সেভ হয়েছে!');
+                                } catch (err) {
+                                    alert('স্টোরেজ ফুল হয়ে গেছে। দয়া করে ছোট সাইজের ছবি দিন।');
+                                }
+                            }
+                        };
+                        img.src = e.target.result;
+                    };
+                    reader.readAsDataURL(files[currentIndex]);
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
